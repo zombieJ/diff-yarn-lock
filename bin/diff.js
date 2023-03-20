@@ -64,11 +64,13 @@ const tgtJson = convertLockToJson(tgt);
 const diffList = deepDiff.diff(srcJson, tgtJson);
 
 // Print the diff
-if (diffList) {
+if (diffList && diffList.length) {
   diffList.forEach(({ path }) => {
     const name = path[0];
     console.log(name);
     console.log(chalk.red('  --', (srcJson[name] || []).join(', ')));
     console.log(chalk.green('  ++', (tgtJson[name] || []).join(', ')));
   });
+} else {
+  console.log(chalk.green('🎉 Nothing changed'));
 }
