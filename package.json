@@ -10,7 +10,11 @@
     "diff-yarn-lock": "./bin/diff.js"
   },
   "author": "zombieJ",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zombieJ/diff-yarn-lock"
+  },
+  "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.2",
     "deep-diff": "^1.0.2",
