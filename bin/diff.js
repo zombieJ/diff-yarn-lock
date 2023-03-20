@@ -65,11 +65,11 @@ const diffList = deepDiff.diff(srcJson, tgtJson);
 
 // Print the diff
 if (diffList && diffList.length) {
-  diffList.forEach(({ path }) => {
-    const name = path[0];
+  const diffNames = new Set(diffList.map(({ path }) => path[0]));
+  diffNames.forEach((name) => {
     console.log(name);
-    console.log(chalk.red('  --', (srcJson[name] || []).join(', ')));
-    console.log(chalk.green('  ++', (tgtJson[name] || []).join(', ')));
+    console.log(chalk.red('--', (srcJson[name] || []).join(', ')));
+    console.log(chalk.green('++', (tgtJson[name] || []).join(', ')));
   });
 } else {
   console.log(chalk.green('🎉 Nothing changed'));
