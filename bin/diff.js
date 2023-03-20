@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require('fs-extra');
 const chalk = require('chalk');
 const deepDiff = require('deep-diff');
