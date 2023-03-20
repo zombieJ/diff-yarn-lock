@@ -1,0 +1,20 @@
+{
+  "name": "diff-yarn-lock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./bin/diff.js --source=test/success.lock --target=test/failure.lock"
+  },
+  "bin": {
+    "diff-yarn-lock": "./bin/diff.js"
+  },
+  "author": "zombieJ",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "deep-diff": "^1.0.2",
+    "fs-extra": "^11.1.0",
+    "yargs-parser": "^21.1.1"
+  }
+}
